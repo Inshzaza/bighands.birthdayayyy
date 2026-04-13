@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-y: auto;
+      color: white;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    /* 🌌 Moving Painting Layer */
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background: url("starry.jpg") no-repeat center center/cover;
+
+      z-index: -1;
+
+      /* ✨ smooth cinematic movement */
+      animation: breathe 25s ease-in-out infinite alternate;
+    }
+
+    @keyframes breathe {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      50% {
+        transform: scale(1.05) translate(-10px, -10px);
+      }
+      100% {
+        transform: scale(1.1) translate(10px, 10px);
+      }
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .message-box {
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid rgba(255, 223, 100, 0.8);
+      padding: 30px;
+      width: 100%;
+      border-radius: 0;
+
+      box-shadow: 
+        0 0 10px rgba(255, 223, 100, 0.6),
+        0 0 25px rgba(255, 223, 100, 0.4),
+        0 0 40px rgba(255, 223, 100, 0.2);
+
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    p {
+      margin-bottom: 14px;
+    }
+
+    .fade-in {
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌌 Background Layer -->
+  <div class="bg"></div>
+
+  <div class="container fade-in">
+
+    <div class="message-box">
+
+      <p>Happy Birthday, my lil fairy, spreading pixie dust wherever you go. I’ve had so many things on my mind to write just before I started writing, but here I am at a complete loss for words. I really wanted to be with you on your birthday, but I couldn’t, so I made this chopped website. It’s a bit embarrassing to present this weird website to a pro, but okay—I’ll learn coding for you and surely make a better one.</p>
+
+      <p>Coming back to your birthday, I’m soooo happy that it’s your birthday today. I wish the best for you and hope this day brings you immense joy, happiness, and health. I’m really glad that you were born, because how else would I have found an amazing person like you? I never liked that bullshit app, but thanks to it, I met an amazing soul like you.</p>
+
+      <p>Ali Raza, you’re the kindest soul I’ve ever met—the best of all. Always spreading love and positivity to everyone. I will always cherish you, your company, and how you take care of your loved ones—always so thoughtful, loving them with all your heart and keeping them before yourself. But I want you to take care of yourself too. You deserve the best of both worlds, and may Allah bless you with everything best in both worlds.</p>
+
+      <p>I always pray that you get everything you want, and I’m sure you will because of how passionate you are about your goals—truly an amazing person. Your hard work will surely pay off, and you’ll be happy forever. All these problems are temporary, but I wish your happiness to be eternal.</p>
+
+      <p>I love you so muchhhh and miss you all the time. I know it might be of little value to you, but yes, I do. And I wish for us to always be together so that we can do every possible adventure—play, ride horses, bake together, do your makeup, make you wear a frock, swing together. We can make a boat too and build a castle of our own to happily live as vampires—and there’s an endless list of things we can do together.</p>
+
+      <p>I’m so glad you came into my life, and you make it better every day just by existing. I’m blessed to have you in my life, and again, I love you soooo much and cherish you for who you are. You are the best, kindest, most handsome, cutest, prettiest, caring, amazing, pookiest, extremely delicious—and so many more good words.</p>
+
+      <p>This message is not exactly how I wanted it to be—everything’s mixed, not properly articulated. I’m writing whatever comes to mind without structuring it, and I’m so sorry for that. But yeah, you’re an amazing person, and I wish you the happiestttt birthdayyyyy everrrr—many, many, many happy returns of the day.</p>
+
+      <p>I miss you—your big hands, your eyes, your ears, your moles, your hair, your arms, your legs—basically your everything. I wish I could hug you and kiss you, but since I can’t, I’m sending you loads and loads of love, virtual hugs, and kisses.</p>
+
+      <p><strong>Again, a very happy birthday, BIG GUY!! 💖</strong></p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

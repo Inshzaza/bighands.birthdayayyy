@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Why You're Special 💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow: hidden;
+    }
+
+    .glass {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 192, 203, 0.6); /* 💖 pink glass */
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 💞 Floating Hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(0, 0, 0, 0.2);
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4">
+
+  <!-- 💞 Floating Hearts -->
+  <div id="hearts"></div>
+
+  <div class="glass p-6 rounded-2xl shadow-2xl max-w-md w-full text-center">
+
+    <h1 class="text-2xl font-bold mb-4 text-pink-700">💖 Why You're Special 💖</h1>
+
+    <!-- 🎵 MUSIC PLAYER -->
+    <audio controls loop class="w-full mb-4 rounded-lg">
+      <source src="romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Typing Text -->
+    <div id="text" class="text-left space-y-2 mb-4 text-sm text-black"></div>
+
+    <!-- Start Button -->
+    <button id="startBtn" onclick="startTyping()" class="bg-pink-500 text-white px-4 py-2 rounded-lg mb-4">
+      Start Reading 💌
+    </button>
+
+    <!-- 🔘 Secret Message Button -->
+    <button onclick="showPasswordBox()" class="bg-purple-600 text-white px-4 py-2 rounded-lg">
+      Secret Message 🔒
+    </button>
+
+    <!-- Hidden Password Box -->
+    <div id="passwordBox" class="hidden mt-4">
+      <input id="password" type="password" placeholder="Enter password..."
+        class="px-3 py-2 rounded-lg text-black w-full mb-2 border">
+
+      <button onclick="checkPassword()" class="bg-white text-purple-600 px-4 py-2 rounded-lg border">
+        Unlock 💌
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    const reasons = [
+      "You were born.",
+      "You are extremely cute and handsome.",
+      "You are genuinely kind and super caring.",
+      "You are a treasure.",
+      "You are my friend and you are thoughtful.",
+      "You are always a good boy.",
+      "You love and care about everyone, especially your people.",
+      "You accept all my torture methods without any objection 😌",
+      "You have big pretty hands.",
+      "You are extremely talented — husband material 💍",
+      "You love mountains 🏔️",
+      "You are funny and have a pretty voice.",
+      "Your sleepy voice is hot 😳",
+      "You exist.",
+      "I'm really glad you're my person. 💫"
+    ];
+
+    let index = 0;
+
+    function startTyping() {
+      document.getElementById("startBtn").style.display = "none";
+      typeLine();
+    }
+
+    function typeLine() {
+      if (index < reasons.length) {
+        let container = document.getElementById("text");
+        let line = document.createElement("p");
+        line.classList.add("fade-in");
+        container.appendChild(line);
+
+        let text = reasons[index];
+        let charIndex = 0;
+
+        let typing = setInterval(() => {
+          if (charIndex < text.length) {
+            line.textContent += text.charAt(charIndex);
+            charIndex++;
+          } else {
+            clearInterval(typing);
+            index++;
+            setTimeout(typeLine, 500);
+          }
+        }, 30);
+      }
+    }
+
+    function showPasswordBox() {
+      document.getElementById("passwordBox").classList.remove("hidden");
+    }
+
+    function checkPassword() {
+      let input = document.getElementById("password").value.trim().toUpperCase();
+
+      if (input === "I LOVE MY MASTER") {
+        window.location.href = "page3.html";
+      } else {
+        alert("Wrong password 😏");
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
